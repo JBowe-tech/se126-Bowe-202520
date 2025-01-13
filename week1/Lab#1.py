@@ -27,15 +27,11 @@
 #--------FUNCTIONS--------------------------------------------
 
 #Calculates if the number of people adheres to fire safety
-def difference(people, max_cap):
-    space_left = people - max_cap
-    space_needed = max_cap - people
-    if space_left >= 0:
-        print("Your meeting adheres to fire safety.")
-        print(f"You can add {space_left} people to the meeting.")
-    else:
-        print("Your meeting does not adhere to fire safety, it is not legal.")   
-        print(f"{space_needed} people need to removed to adhere to fire safety protocols.") 
+def difference(max_cap, people):
+    diff = max_cap - people
+    
+    return diff
+   
 
 #Shows if user has entered appropriate information
 def decision(response): 
@@ -64,7 +60,17 @@ while response == "y":
 
     people = int(input("Enter the number of people attending the meeting: "))
 
-    difference(max_cap, people)
+    diff = difference(max_cap, people)
+
+    if diff > 0:
+        print(f"Meeting adheres to fire safety! You can have {diff} more person(s) in your meeting.")
+
+    elif diff == 0:
+        print("Your meeting aheres to fire safety! You cannot have anymore people in your meeting")
+
+    else:
+        print(f"Your meeting does not adhere to fire safety! You need to remove {diff} person(s).")
+
 
     response = input("\t\tWould you like to check another room? [y/n]: ").lower()
 
