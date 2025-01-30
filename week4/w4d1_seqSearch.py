@@ -134,6 +134,7 @@ else:
 
 
 
+
 #Step 1: Set-up and gain search query
 
 found = [] #empty list, found locations (index) will be stored in found
@@ -166,3 +167,5 @@ else:
     #FOUND!
     print(f"Your search for {search_let} was FOUND! Here is their data:")
     print(f"{found[found[i]]} {firstName[found[i]]:10} {lastName[found[i]]:10} {test1[found[i]]:3} {test2[found[i]]:3} {test3[found[i]]:3} {num_avg[found[i]]:6.1f} {let_avg[found[i]]}")
+
+
