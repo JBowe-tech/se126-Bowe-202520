@@ -184,10 +184,11 @@ while answer == "y":
     print("\t~Search Menu~")
     print("1. Search by Last Name")         #one search value found
     print("2. Search by Letter Grade")      #multiple searcg values found
-    print("3. Exit")
+    print("3. Search by First Name")
+    print("4. Exit")
 
     #gain search type
-    search_type = input("Enter your search type [1-3]: ")
+    search_type = input("Enter your search type [1-4]: ")
 
     #filter search options based on type
     if search_type == "1": #Last Name
@@ -254,7 +255,41 @@ while answer == "y":
             #'found' is a list populated with index locations - we loop through this list, and use found[i] (which again, holds an INDEX from our other searched-through list) to be recalled and used below
             for i in range(0, len(found)):
                 print(f"{found[i]}:  {firstName[found[i]]:10}  {lastName[found[i]]:10}  {test1[found[i]]:3}  {test2[found[i]]:3}  {test3[found[i]]:3}  {num_avg[found[i]]:6.1f}  {let_avg[found[i]]}")
-    elif search_type == "3": #exit
+    
+    elif search_type == "3":
+         #sequential search - search for a student by their First name
+
+        print("\t~First Name Search~")
+        #step 1: set-up and gain search query
+
+        found = -1 
+        search_first = input("Enter the first name you wish to find: ") 
+
+        #step 2: perform search algo 
+        for i in range(0, len(lastName)):
+            #for loop performs the SEQUENCE - from start through end of list items
+
+            if search_first.lower() == firstName[i].lower():
+        
+                
+                found = i #stores found item's INDEX LOCATION
+
+
+        #step 3: display results to user; make sure you give info: both for found or NOT found
+        if found != -1:
+            #First name FOUND!
+
+            print(f"Your search for {search_first} was FOUND! Here is their data: ")
+            print(f"{firstName[found]:10} {lastName[found]:10} {test1[found]:3} {test2[found]:3} {test3[found]:3} {num_avg[found]:6.1f} {let_avg[found]}")
+
+        else:
+            #NOT FOUND!
+            print(f"Your search for {search_first} was NOT FOUND!")
+            print("Check your CasINg and spELLinG and try again!")
+
+    
+    elif search_type == "4": #exit
+
         print("\t~EXIT~")
         answer = "x"
     else:
