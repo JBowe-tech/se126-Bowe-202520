@@ -1,6 +1,6 @@
 #Jayda Bowe
 #Jan 23rd 2025
-#W3D2 - List Review - 1 Dimensional Lists & Parallel Lists
+#W4D1 - List Review - 1 Dimensional Lists & Parallel Lists
 
 #Variable Dicionary:
 #total_records - total records in the file
