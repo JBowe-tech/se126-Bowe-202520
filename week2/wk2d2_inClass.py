@@ -17,7 +17,6 @@
 #diff - returned value from the difference function
 #total_rec - total rooms in the file
 #rooms_over - the rooms that go over room capacity
-#file -  #allow the csv.reader() to access and read the file path; stores contents to 'file' [a 2D list/ matrix / table]
 #name - name of room
 #max - max amount of people
 #ppl - the amount of people
