@@ -38,7 +38,12 @@ def swap(i, listName):
     temp = listName[i]
     listName[i] = listName[i + 1]
     listName[i + 1] = temp
-    
+
+
+def seqSearch(search, listname):
+    for i in range(0, len(listname)):
+        if search.lower() in listname[i].lower():
+            found.append(i)
 #--MAIN EXECUTING CODE-------------------------------------------------------------------
 practice = ["Austin", "Cory", "Noah", "Duncan", "Justyn"]
 
@@ -78,7 +83,7 @@ while ans != "y" and ans != "n":
 #main searching loop
 while ans == "y":
     found = [] #resets found list so each new menu/search it is empty
-    
+
     print("\tSEARCHING MENU")
     print("1. Search by TYPE") #shows all of either elf or dragon
     print("2. Search by NAME") #binary search review
