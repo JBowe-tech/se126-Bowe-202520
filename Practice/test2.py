@@ -1,36 +1,4 @@
-#Jayda Bowe
-#Feb 16 2025
-#W6D2 - SE126_Lab5-1
-
-#Prompt - Build a personal library search system using the file book_list.csv. It is set up as follows:
-
-#Store the file data into 1D parallel lists, then use the appropriate searching algorithms for the menu system options.
-#Your program should give your user the following menu:
-#Personal Library Menu
-#1. Show All Titles – list all book data to the user alphabetically by title
-#2. Search by Title – allow for an entire title or a title key word
-#3. Search by Author – show all titles of the searched-for author
-#4. Search by Genre - show all titles of the searched-for genre
-#5. Search by Library Number – only allow for one specific library number item
-#6. Show All Available – show all titles with status “available”
-#7. Show All On Loan - show all titles with status “on loan”
-#8. EXIT
-#When your user runs any of the options 1 – 7, show all data associated with the search [Library Number, Title, Author,
-#Genre, Page count, Status]. Do not allow the program to end unless the user chooses option 8 to exit. All searches
-#should not be case sensitive.
-
-#Variable Dictionary:
-
-
-
-#this file uses: book_list.csv
-
-#PROGRAM PROMPT: Build a repeatable, menu-driven program to access and search for data within the file
-
-#--IMPORTS-------------------------------------------------------------------------------
 import csv
-
-# --FUNCTIONS-----------------------------------------------------------------------------
 
 # -- FUNCTIONS -----------------------------------------------------------------------
 def display(x, records):
@@ -60,7 +28,6 @@ def display(x, records):
             print("-----------------------------------------------------------------------------------------------------------------------------------------------------\n")
 
 def seqSearch(search, listname):
-
     for i in range(0, len(listname)):
         if search.lower() in listname[i].lower():
             found.append(i)
@@ -72,10 +39,6 @@ def seqSearch(search, listname):
         print(f"'{search}' was found!")
         display("x", len(found))
 
-def swap(i, listName):
-    temp = listName[i]
-    listName[i] = listName[i + 1]
-    listName[i + 1] = temp
 # -- MAIN EXECUTING CODE -------------------------------------------------------------
 library_num = []
 title = [] 
@@ -136,13 +99,12 @@ while ans == "y":
             for j in range(0, len(library_num)-1):
                 if library_num[j] > library_num[j + 1]:
                     # Swap
-                    swap(j, title)
-                    swap(j, author)
-                    swap(j, genre)
-                    swap(j, pg_count)
-                    swap(j, status)
-
-                    
+                    library_num[j], library_num[j + 1] = library_num[j + 1], library_num[j]
+                    title[j], title[j + 1] = title[j + 1], title[j]
+                    author[j], author[j + 1] = author[j + 1], author[j]
+                    genre[j], genre[j + 1] = genre[j + 1], genre[j]
+                    pg_count[j], pg_count[j + 1] = pg_count[j + 1], pg_count[j]
+                    status[j], status[j + 1] = status[j + 1], status[j]
 
         # Display the whole list data to user
         display("x", len(library_num)) 
@@ -179,13 +141,13 @@ while ans == "y":
         for i in range(0, len(library_num)-1):
             for j in range(0, len(library_num)-1):
                 if library_num[j] > library_num[j + 1]:
-                    swap(j, title)
-                    swap(j, author)
-                    swap(j, genre)
-                    swap(j, pg_count)
-                    swap(j, status)
+                    library_num[j], library_num[j + 1] = library_num[j + 1], library_num[j]
                     
-                    
+                    title[j], title[j + 1] = title[j + 1], title[j]
+                    author[j], author[j + 1] = author[j + 1], author[j]
+                    genre[j], genre[j + 1] = genre[j + 1], genre[j]
+                    pg_count[j], pg_count[j + 1] = pg_count[j + 1], pg_count[j]
+                    status[j], status[j + 1] = status[j + 1], status[j]
 
         # Binary Search for Library Number
         min = 0
