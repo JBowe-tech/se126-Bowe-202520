@@ -1,6 +1,10 @@
+#Jayda Bowe
+#February 24th 2025
+
+
 #W8D1 - Introduction
 
-#Dictionaries in Python are a collection set sumilar to associative arrays in JavaScript
+#Dictionaries in Python are a collection set similar to associative arrays in JavaScript but also look similar to JS object builds. Most importantly, they store data in key and value pairs. They keys are referred to as properties and the values can be any data type. 
 
 
 #----Imports---------------------------------------------------------------
