@@ -21,15 +21,20 @@ def ans(response):
     return response #this value will replace the function call in the main code
 
 #-----Main Code------------------------------------------------------------------------------------------------------
+#Welcome statement
 print(f"Welcome to my seat booking program :D!\n")
 
+
+#Seat lists
 seatA = ["A", "A", "A", "A", "A", "A", "A"]
 seatB = ["B", "B", "B", "B", "B", "B", "B"]
 seatC = ["C", "C", "C", "C", "C", "C", "C"]
 seatD = ["D", "D", "D", "D", "D", "D", "D"]
 
+
 response = "y"
 
+#Loop statement 
 while response == "y":
 
     display()

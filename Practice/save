@@ -1,0 +1,14 @@
+ elif choice == "2":
+            search = input("Flibbers: Is it already time to get more items? Alright you should check what we need and what we don't. What do you want to check first?[In-Stock/Out-of-Stock]: ").lower()
+            found_items = [names[i] for i in range(len(stock)) if search in stock[i].lower()]
+            
+            if found_items:
+                for item in found_items:
+                    print(item)
+            else:
+                print(f"\nFlibbers: Sorry shopkeeper we don't seem to have this item...have we even sold {search} here before?")
+
+        elif choice == "3":
+            print("Flibbers: Did you get something new? What is it?")
+            item = input("Flibbers: What's it called?: ")
+            cost = input("TFlibbers: hat sounds...interesting...how much are we charging for it?: ")
